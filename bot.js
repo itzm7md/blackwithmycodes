@@ -113,7 +113,7 @@ var download = function(uri, filename, callback) {
     });
 };
 
-client.on('message', function(message) {
+black.on('message', function(message) {
     const member = message.member;
     const mess = message.content.toLowerCase();
     const args = message.content.split(' ').slice(1).join(' ');
@@ -263,7 +263,7 @@ function search_video(query, cb) {
 function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
- client.on('message', message => {
+black.on('message', message => {
   if (message.content === `${prefix}`) {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
