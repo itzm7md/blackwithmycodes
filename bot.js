@@ -63,4 +63,4 @@ black.on('message',msg=>{
 });
 });
 });
-black.login('process.env.BOT_TOKEN')
+black.login('NDg4ODAwNzk5OTQ2OTY0OTkz.DnhfFg.9qjkZKrtzwFZgZ2B0bRyoroocXo')
