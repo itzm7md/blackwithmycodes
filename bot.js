@@ -3,10 +3,6 @@ const black = new Discord.Client();
 black.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-black.on('message', msg =>{
-	if(msg.content ===('السلام عليكم')
-		msg.reply('وعليكم السلام')
-});
 black.on('message',msg=>{
    if(msg.content === 'السلام عليكم') return msg.reply('وعليكم السلام');
  black.on('guildMemberAdd',async member => {
