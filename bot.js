@@ -1,12 +1,69 @@
- const Discord = require('discord.js');
-const epic = new Discord.Client();
+const Discord = require('discord.js');
+const black = new Discord.Client();
 
-epic.on('ready',async () => {
-  epic.channels.find(ch => ch.id === "487045322929995777" && ch.type === 'voice').join();
+black.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
-
-// طبعا عشان الكود يشتغل بكفاءة لازم يكون البوت مفتوح 24 ساعة
-// البوت بيخرج برا الروم اذا الخادم قفل
-// جميع الحقوق محفوظة لسيرفر كودز
-
-epic.login("NDg3OTYxNzgyNzMyODQ5MTYz.DnVjOg.XN68jq1mW4padPXDxtybv-wyMvY")
+black.on('message',msg=>{
+    if(msg.content ===('السلام عليكم')
+        msg.reply('وعليكم السلام')
+});
+ client.on('guildMemberAdd',async member => {
+  const Canvas = require('canvas');
+  const jimp = require('jimp');
+  const w = ['welcome_4.png'];
+        let Image = Canvas.Image,
+            canvas = new Canvas(800, 300),
+            ctx = canvas.getContext('2d');
+        ctx.patternQuality = 'bilinear';
+        ctx.filter = 'bilinear';
+        ctx.antialias = 'subpixel';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.stroke();
+        ctx.beginPath();
+ 
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 800, 300);
+ 
+})
+ 
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                 if (err) return console.log(err);
+ 
+          ctx.font = '36px Arial';
+          ctx.fontSize = '72px';
+          ctx.fillStyle = "#ffffff";
+          ctx.textAlign = "center";
+          ctx.fillText(member.user.username, 545, 177);
+         
+          ctx.font = '16px Arial Bold';
+          ctx.fontSize = '72px';
+          ctx.fillStyle = "#ffffff";
+          ctx.textAlign = "center";
+          ctx.fillText(`${member.guild.memberCount} Members`, 580, 200);
+         
+          let Avatar = Canvas.Image;
+          let ava = new Avatar;
+          ava.src = buf;
+          ctx.beginPath();
+          ctx.arc(169.5, 148, 126.9, -100, Math.PI * 2, true);
+          ctx.closePath();
+          ctx.clip();
+          ctx.drawImage(ava, 36, 21, 260, 260);
+           
+          const c = hero.channels.get(" اي دي الروم ");
+          c.sendFile(canvas.toBuffer());
+ 
+});
+});
+});
+black.login('توكن البوت')
