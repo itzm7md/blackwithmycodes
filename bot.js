@@ -1,11 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-cliemt.on('ready', () => {
+
+client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-black.on('message',msg=>{
-   if(msg.content === 'السلام عليكم') return msg.reply('وعليكم السلام');
- black.on('guildMemberAdd',async member => {
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
+client.on('guildMemberAdd',async member => {
   const Canvas = require('canvas');
   const jimp = require('jimp');
   const w = ['welcome_4.png'];
@@ -63,4 +68,5 @@ black.on('message',msg=>{
 });
 });
 });
-black.login('token');
+
+client.login('process.env.BOT_TOKEN');
